@@ -5,13 +5,8 @@ import {
 
 const AuthRequired = ({children})=>{
     const user = localStorage.getItem('user')
-    if(!user){
-        
-
-        return <Navigate to={'/login'} />
-    }else{
-        return children
-    }
+        return !user ? <Navigate to={'/login'} /> : children 
 }
+
 
 export default AuthRequired
